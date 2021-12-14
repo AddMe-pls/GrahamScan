@@ -46,8 +46,6 @@ int main() {
   for (n = 1; n <= 1000001; n += 10000) {
     std::vector<std::pair<int, int>> tmpQuickVec(n);
     for (auto i = tmpQuickVec.begin(); i != tmpQuickVec.end(); ++i) {
-      //i->first = rand() % q;
-      //i->second = rand() % w;
       int tmp = rand() % (q * w);
       if (0 <= tmp <= q) {
         i->first = 0;
@@ -80,8 +78,6 @@ int main() {
   for (n = 1; n <= 1000001; n += 10000) {
     std::vector<std::pair<int, int>> tmpAvlVec(n);
     for (auto i = tmpAvlVec.begin(); i != tmpAvlVec.end(); ++i) {
-      //i->first = rand() % q;
-      //i->second = rand() % w;
       int tmp = rand() % (q * w);
       if (0 <= tmp <= q) {
         i->first = 0;
@@ -155,8 +151,6 @@ int main() {
     w = q;
     std::vector<std::pair<int, int>> tmpQuickVec(n);
     for (auto i = tmpQuickVec.begin(); i != tmpQuickVec.end(); ++i) {
-      //i->first = rand() % q;
-      //i->second = rand() % w;
       int tmp = rand() % (q * w);
       if (0 <= tmp <= q) {
         i->first = 0;
@@ -190,8 +184,6 @@ int main() {
     w = q;
     std::vector<std::pair<int, int>> tmpAvlVec(n);
     for (auto i = tmpAvlVec.begin(); i != tmpAvlVec.end(); ++i) {
-      //i->first = rand() % q;
-      //i->second = rand() % w;
       int tmp = rand() % (q * w);
       if (0 <= tmp <= q) {
         i->first = 0;

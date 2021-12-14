@@ -12,10 +12,6 @@ void QuickSort(std::vector<std::pair<int, int>>::iterator first,
 
 bool rotate(std::pair<int, int> fpoint, std::pair<int, int> spoint,
             std::pair<int, int> thpoint);
-long double rvec(std::pair<int, int> point);
-long double CosRadAngle(std::pair<int, int> point);
-long double CosAngle(std::pair<int, int> fpoint, std::pair<int, int> spoint);
-
 bool cmp(std::pair<int, int> fpoint, std::pair<int, int> spoint);
 
 std::vector<std::pair<int, int>> ConvSort(std::vector<std::pair<int, int>>& a,

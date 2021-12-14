@@ -65,12 +65,7 @@ int TBalanceTreeTable::InsBalanceTree(TNode*& pNode, std::pair<int, int> k) {
     if (InsBalanceTree(pNode->pLeft, k) == HeightInc) {
       HeightIndex = LeftTreeBalancing(pNode);
     }
-  } /* else if (k.second >= 0 && pNode->GetRec().second >= 0 &&
-             (acos(CosRadAngle(k)) - acos(CosRadAngle(pNode->GetRec()))) <
-                 0.0001 &&
-             (rvec(k) == rvec(pNode->GetRec()))) {
-    HeightIndex = HeightOK;
-  }*/ else if (!cmp(k, pNode->GetRec())) {
+  } else if (!cmp(k, pNode->GetRec())) {
     if (InsBalanceTree(pNode->pRight, k) == HeightInc) {
       HeightIndex = RightTreeBalancing(pNode);
     }
@@ -178,10 +173,12 @@ int TBalanceTreeTable::DelBalanceTree(TNode*& pNode, std::pair<int, int> k) {
         HeightIndex = RightTreeBalancing(pNode);
       }
     } else {
-      if (k.second >= 0 && pNode->GetRec().second >= 0 &&
-          (acos(CosRadAngle(k)) - acos(CosRadAngle(pNode->GetRec()))) <
-              0.0001 &&
-          (rvec(k) == rvec(pNode->GetRec()))) {
+      //double tmp = -k.first * pNode->GetRec().second + k.second * pNode->GetRec().first;
+      if (-k.first * pNode->GetRec().second +
+                  k.second * pNode->GetRec().first ==
+              0 &&
+          k.first + abs(k.second) <
+              pNode->GetRec().first + abs(pNode->GetRec().second)) {
         if (DelBalanceTree(pNode->pRight, k) != HeightOK) {
           HeightIndex = LeftTreeBalancing(pNode);
         }
